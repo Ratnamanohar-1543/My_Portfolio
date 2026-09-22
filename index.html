@@ -1,0 +1,1662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Portfolio of Naga Venkata Ratna Manohar — Information Technology student, Python developer, Django developer, and AWS Cloud & DevOps learner.">
+  <meta name="theme-color" content="#0b1020">
+  <title>Naga Venkata Ratna Manohar | Portfolio</title>
+
+ <style>
+
+:root {
+    --bg: #050505;
+    --surface: #0d0d0d;
+    --surface-2: #141414;
+    --text: #f5f5f5;
+    --muted: #a1a1a1;
+    --accent: #ff2d75;
+    --accent-2: #ff4f9a;
+    --border: rgba(255,255,255,.10);
+    --shadow: 0 20px 60px rgba(0,0,0,.35);
+    --max: 1180px;
+}
+
+
+/* =========================
+   GLOBAL
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family:
+        Inter,
+        ui-sans-serif,
+        system-ui,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        sans-serif;
+
+    background:
+        radial-gradient(
+            circle at 10% 10%,
+            rgba(255,45,117,.08),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 90% 25%,
+            rgba(255,79,154,.05),
+            transparent 28%
+        ),
+        var(--bg);
+
+    color: var(--text);
+    line-height: 1.6;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(var(--max), 92%);
+    margin: auto;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+.eyebrow {
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: .18em;
+    font-size: .78rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+}
+
+h2 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.1;
+    margin-bottom: 16px;
+}
+
+.section-intro {
+    max-width: 720px;
+    color: var(--muted);
+    margin-bottom: 42px;
+}
+
+
+/* =========================
+   NAVIGATION
+========================= */
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+
+    z-index: 100;
+
+    background: rgba(5,5,5,.82);
+
+    backdrop-filter: blur(18px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    height: 70px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-weight: 900;
+    letter-spacing: .06em;
+}
+
+.logo span {
+    color: var(--accent);
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.nav-links a {
+    color: var(--muted);
+    font-size: .92rem;
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    color: var(--text);
+}
+
+.nav-btn {
+    padding: 9px 15px;
+
+    border: 1px solid var(--border);
+    border-radius: 999px;
+
+    color: var(--text) !important;
+
+    background: rgba(255,255,255,.04);
+}
+
+.menu {
+    display: none;
+
+    border: 0;
+    background: none;
+
+    color: var(--text);
+
+    font-size: 1.5rem;
+
+    cursor: pointer;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 90px;
+}
+
+.hero-grid {
+    display: grid;
+
+    grid-template-columns: 1.25fr .75fr;
+
+    gap: 60px;
+
+    align-items: center;
+}
+
+.hero h1 {
+    font-size: clamp(3rem, 7vw, 6.5rem);
+
+    line-height: .95;
+
+    letter-spacing: -.055em;
+
+    margin: 10px 0 24px;
+}
+
+.hero h1 span {
+    background:
+        linear-gradient(
+            90deg,
+            #ff2d75,
+            #ff6fa8
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero p {
+    font-size: 1.12rem;
+
+    color: var(--muted);
+
+    max-width: 700px;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.actions {
+    display: flex;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 8px;
+
+    padding: 13px 19px;
+
+    border-radius: 12px;
+
+    font-weight: 800;
+
+    border: 1px solid var(--border);
+
+    transition: .2s;
+
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--accent);
+
+    color: #ffffff;
+    border-color: var(--accent);
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,.04);
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+
+/* =========================
+   HERO PHOTO
+========================= */
+
+.hero-photo-card {
+    width: 360px;
+    height: 450px;
+
+    margin: auto;
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 24px;
+    border: 1px solid rgba(255,255,255,.14);
+
+    background: var(--surface);
+
+    box-shadow:
+        0 20px 50px rgba(0,0,0,.5),
+        0 0 35px rgba(255,45,117,.08);
+
+    transition: .35s ease;
+}
+
+/* Pink glow behind photo */
+.hero-photo-card::before {
+    content: "";
+
+    position: absolute;
+
+    width: 180px;
+    height: 180px;
+
+    top: -60px;
+    right: -60px;
+
+    border-radius: 50%;
+
+    background: rgba(255,45,117,.12);
+
+    filter: blur(30px);
+
+    pointer-events: none;
+}
+
+/* Photo */
+.hero-photo-card img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+    object-position: center;
+
+    position: relative;
+    z-index: 2;
+
+    transition: transform .4s ease;
+}
+
+/* Hover */
+.hero-photo-card:hover {
+    transform: translateY(-8px);
+
+    border-color: rgba(255,45,117,.45);
+
+    box-shadow:
+        0 25px 60px rgba(0,0,0,.6),
+        0 0 40px rgba(255,45,117,.15);
+}
+
+.hero-photo-card:hover img {
+    transform: scale(1.03);
+}
+
+
+/* Pink button hover */
+.btn-primary:hover {
+    background: #ff4f91;
+    border-color: #ff4f91;
+    box-shadow: 0 10px 30px rgba(255,45,117,.25);
+}
+
+.btn-secondary:hover {
+    border-color: rgba(255,45,117,.45);
+    color: #ff5c96;
+}
+
+/* =========================
+   COMMON CARDS
+========================= */
+
+.grid {
+    display: grid;
+    gap: 20px;
+}
+
+.two {
+    grid-template-columns: repeat(2,1fr);
+}
+
+.three {
+    grid-template-columns: repeat(3,1fr);
+}
+
+.card {
+
+    background: rgba(255,255,255,.035);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 25px;
+
+    transition: .25s;
+}
+
+.card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(255,45,117,.28);
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+.tag {
+
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 999px;
+
+    background: rgba(255,45,117,.08);
+
+    border: 1px solid rgba(255,45,117,.20);
+
+    color: #ff79a9;
+
+    font-size: .78rem;
+
+    font-weight: 700;
+
+    margin: 4px 4px 0 0;
+}
+
+
+/* =========================
+   ABOUT
+========================= */
+
+.about-box {
+    max-width: 900px;
+}
+
+.facts {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 14px;
+
+    margin-top: 28px;
+}
+
+.fact {
+
+    padding: 18px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    background: rgba(255,255,255,.025);
+}
+
+.fact strong {
+
+    display: block;
+
+    font-size: 1.3rem;
+}
+
+.fact span {
+
+    color: var(--muted);
+
+    font-size: .85rem;
+}
+
+
+/* =========================
+   EXPERIENCE
+========================= */
+
+.timeline {
+
+    position: relative;
+
+    display: grid;
+
+    gap: 20px;
+}
+
+.timeline:before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 12px;
+
+    top: 12px;
+
+    bottom: 12px;
+
+    width: 1px;
+
+    background: var(--border);
+}
+
+.timeline-card {
+
+    position: relative;
+
+    padding-left: 48px;
+}
+
+.timeline-card:before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 6px;
+
+    top: 29px;
+
+    width: 13px;
+    height: 13px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    box-shadow:
+        0 0 0 5px rgba(255,45,117,.10),
+        0 0 18px rgba(255,45,117,.35);
+}
+
+.date {
+
+    font-size: .8rem;
+
+    color: var(--accent);
+
+    font-weight: 800;
+
+    margin-bottom: 7px;
+}
+
+
+/* =========================
+   PROJECTS
+========================= */
+
+.project-card {
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+.project-card .bottom {
+
+    margin-top: auto;
+
+    padding-top: 20px;
+}
+
+.project-links {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 15px;
+}
+
+.small-btn {
+
+    padding: 9px 12px;
+
+    border-radius: 10px;
+
+    font-size: .85rem;
+
+    border: 1px solid var(--border);
+}
+
+
+/* =========================
+   CERTIFICATIONS
+========================= */
+
+.cert-filter {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 25px;
+}
+
+.filter {
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,.035);
+
+    color: var(--muted);
+
+    border-radius: 999px;
+
+    padding: 9px 14px;
+
+    cursor: pointer;
+
+    font-weight: 700;
+}
+
+.filter.active,
+.filter:hover {
+
+    color: var(--text);
+
+    border-color: rgba(255,45,117,.45);
+}
+
+.cert-grid {
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.cert-card {
+
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 250px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(255,255,255,.06),
+            rgba(255,255,255,.025)
+        );
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 22px;
+
+    transition: .25s;
+
+    cursor: pointer;
+}
+
+.cert-card:hover {
+
+    transform: translateY(-5px);
+
+    border-color: rgba(255,45,117,.45);
+}
+
+.cert-icon {
+
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+
+    place-items: center;
+
+    border-radius: 13px;
+
+    background: rgba(255,45,117,.09);
+
+    color: #ff4f91;
+
+    font-weight: 900;
+
+    font-size: 1.1rem;
+
+    margin-bottom: 20px;
+}
+
+.cert-card h3 {
+
+    font-size: 1.05rem;
+}
+
+.cert-card p {
+
+    color: var(--muted);
+
+    font-size: .88rem;
+}
+
+.cert-card .open {
+
+    margin-top: auto;
+
+    padding-top: 18px;
+
+    color: var(--accent);
+
+    font-weight: 800;
+
+    font-size: .86rem;
+}
+
+.cert-card.hidden {
+    display: none;
+}
+
+
+/* =========================
+   EDUCATION
+========================= */
+
+.education-item {
+
+    display: flex;
+
+    gap: 18px;
+
+    align-items: flex-start;
+}
+
+.edu-icon {
+
+    min-width: 48px;
+
+    height: 48px;
+
+    border-radius: 14px;
+
+    display: grid;
+
+    place-items: center;
+
+    background: rgba(139,92,246,.12);
+
+    color: #c4b5fd;
+
+    font-weight: 900;
+}
+
+
+/* =========================
+   CONTACT
+========================= */
+
+.contact-grid {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+.contact-item {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    padding: 20px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 17px;
+
+    background: rgba(255,255,255,.03);
+}
+
+.contact-item strong {
+    display: block;
+}
+
+.contact-item span {
+
+    color: var(--muted);
+
+    font-size: .9rem;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+
+    border-top: 1px solid var(--border);
+
+    padding: 35px 0;
+
+    color: var(--muted);
+}
+
+.footer-inner {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================
+   CERTIFICATE MODAL
+========================= */
+
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.78);
+
+    backdrop-filter: blur(8px);
+
+    display: none;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 200;
+}
+
+.modal.open {
+    display: flex;
+}
+
+.modal-box {
+
+    width: min(1000px,100%);
+
+    max-height: 92vh;
+
+    overflow: auto;
+
+    background: #0d1220;
+
+    border: 1px solid var(--border);
+
+    border-radius: 22px;
+
+    position: relative;
+
+    padding: 22px;
+}
+
+.modal-top {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 18px;
+}
+
+.close {
+
+    border: 1px solid var(--border);
+
+    background: rgba(255,255,255,.05);
+
+    color: var(--text);
+
+    border-radius: 10px;
+
+    padding: 8px 12px;
+
+    cursor: pointer;
+
+    font-size: 1rem;
+}
+
+.modal-content img {
+
+    display: block;
+
+    max-width: 100%;
+
+    max-height: 70vh;
+
+    margin: auto;
+
+    border-radius: 12px;
+}
+
+.modal-content iframe {
+
+    width: 100%;
+
+    height: 70vh;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background: white;
+}
+
+.modal-actions {
+
+    display: flex;
+
+    gap: 10px;
+
+    flex-wrap: wrap;
+
+    margin-top: 16px;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 950px) {
+
+    .hero-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+    }
+
+    .hero-photo-card {
+        width: 320px;
+        height: 400px;
+    }
+
+    .three,
+    .cert-grid {
+
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 700px) {
+
+    .nav-links {
+
+        display: none;
+
+        position: absolute;
+
+        top: 70px;
+
+        left: 0;
+
+        right: 0;
+
+        padding: 20px;
+
+        background: #0b0f1b;
+
+        border-bottom: 1px solid var(--border);
+
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .two,
+    .three,
+    .cert-grid,
+    .contact-grid,
+    .facts {
+
+        grid-template-columns: 1fr;
+    }
+
+    .section {
+        padding: 75px 0;
+    }
+
+    .hero {
+
+        min-height: auto;
+
+        padding-top: 120px;
+
+        padding-bottom: 80px;
+    }
+
+    .hero h1 {
+
+        font-size: 3.2rem;
+    }
+
+    .hero p {
+
+        font-size: 1rem;
+    }
+
+    .hero-photo-card {
+        width: 280px;
+        height: 350px;
+        border-radius: 22px;
+    }
+
+    .actions {
+
+        gap: 10px;
+    }
+
+    .btn {
+
+        padding: 11px 15px;
+
+        font-size: .88rem;
+    }
+
+    .footer-inner {
+
+        flex-direction: column;
+    }
+}
+
+
+/* =========================
+   VERY SMALL DEVICES
+========================= */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+
+        font-size: 2.7rem;
+    }
+
+    .hero-photo-card {
+        width: 240px;
+        height: 300px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+<nav>
+  <div class="container nav-inner">
+    <a class="logo" href="#home">Naga Venkata Ratna Manohar<span>.</span></a>
+    <button class="menu" id="menuBtn" aria-label="Open menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#certifications">Certifications</a>
+      <a href="#education">Education</a>
+      <a href="#contact" class="nav-btn">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<main id="home">
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <div class="eyebrow">Information Technology Student</div>
+        <h1>Hi, I'm <span>Manohar.</span></h1>
+        <p>
+          I build practical software with Python and Django, explore cloud technologies
+          with AWS, and keep expanding my skills across AI, web development and application development.
+        </p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#projects">View Projects →</a>
+          <a class="btn btn-secondary" href="#certifications">View Certifications</a>
+          <a class="btn btn-secondary" href="https://www.linkedin.com/in/ratnamanohar" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <!-- Replace the # below with your actual GitHub profile URL -->
+          <a class="btn btn-secondary" href="#" onclick="alert('Add your GitHub profile URL here.');return false;">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="hero-photo-card">
+    <img src="assets/11.jpeg" alt="Naga Venkata Ratna Manohar">
+</div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="eyebrow">About</div>
+      <h2>Developer mindset. Student journey.</h2>
+      <div class="about-box">
+        <p class="muted">
+          I'm an Information Technology student interested in software development,
+          Python, Django, cloud computing and emerging AI technologies. I enjoy turning
+          what I learn into working projects and continuously improving my development skills.
+        </p>
+        <div class="facts">
+          <div class="fact"><strong>Python</strong><span>Programming</span></div>
+          <div class="fact"><strong>Django</strong><span>Web Development</span></div>
+          <div class="fact"><strong>AWS</strong><span>Cloud & DevOps</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <div class="container">
+      <div class="eyebrow">Skills</div>
+      <h2>Tools I work with</h2>
+      <p class="section-intro">A growing technical toolkit built through coursework, internships, projects and certifications.</p>
+      <div class="grid three">
+        <div class="card">
+          <h3>Programming</h3>
+          <p class="muted">Python, Java, C, Dart</p>
+          <div><span class="tag">Python</span><span class="tag">Java</span><span class="tag">C</span><span class="tag">Dart</span></div>
+        </div>
+        <div class="card">
+          <h3>Web Development</h3>
+          <p class="muted">Django-based web application development.</p>
+          <div><span class="tag">Django</span><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">SQL</span></div>
+        </div>
+        <div class="card">
+          <h3>Cloud & DevOps</h3>
+          <p class="muted">Hands-on learning through AWS Cloud & DevOps internship work.</p>
+          <div><span class="tag">AWS EC2</span><span class="tag">AWS RDS</span><span class="tag">IAM</span><span class="tag">Git</span></div>
+        </div>
+        <div class="card">
+          <h3>AI / Data</h3>
+          <p class="muted">Exploring AI, Generative AI and data-oriented tools.</p>
+          <div><span class="tag">AI</span><span class="tag">GenAI</span><span class="tag">Power BI</span><span class="tag">ML</span></div>
+        </div>
+        <div class="card">
+          <h3>Mobile</h3>
+          <p class="muted">Learning application development with Flutter and Dart.</p>
+          <div><span class="tag">Flutter</span><span class="tag">Dart</span></div>
+        </div>
+        <div class="card">
+          <h3>Design</h3>
+          <p class="muted">UI/UX and human-computer interaction learning.</p>
+          <div><span class="tag">UI/UX</span><span class="tag">HCI</span><span class="tag">Design Thinking</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="container">
+      <div class="eyebrow">Experience</div>
+      <h2>Internships & practical exposure</h2>
+      <div class="timeline">
+        <div class="card timeline-card">
+          <div class="date">2026</div>
+          <h3>AWS Cloud Computing – DevOps Intern</h3>
+          <p class="muted">APSSDC Summer Online Internship</p>
+          <p style="margin-top:12px" class="muted">
+            Worked through cloud and DevOps concepts with a project-oriented focus, including AWS services and deployment workflow.
+          </p>
+        </div>
+        <div class="card timeline-card">
+          <div class="date">2025</div>
+          <h3>Web Development using Django Intern</h3>
+          <p class="muted">APSSDC Summer Online Internship</p>
+          <p style="margin-top:12px" class="muted">
+            Built and worked with Django web applications, database-backed features, authentication and project deployment concepts.
+          </p>
+        </div>
+        <div class="card timeline-card">
+          <div class="date">2026</div>
+          <h3>Cloud & DevOps Internship Acceptance</h3>
+          <p class="muted">Datavalley India Pvt Ltd</p>
+          <p style="margin-top:12px" class="muted">
+            Internship acceptance in the Cloud & DevOps domain.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="projects">
+    <div class="container">
+      <div class="eyebrow">Projects</div>
+      <h2>Things I've built</h2>
+      <p class="section-intro">
+        Practical projects developed to apply programming, web development,
+        database management and real-world problem-solving skills.
+      </p>
+
+      <div class="grid two">
+
+        <article class="card project-card">
+          <div>
+            <h3>Campus Fee Management System</h3>
+            <p class="muted">
+              A web-based campus fee management application designed to manage
+              student fee details, payment records, remaining balances and
+              administrative operations efficiently.
+            </p>
+            <div>
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">MySQL</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">AWS</span>
+            </div>
+          </div>
+
+          <div class="bottom">
+            <div class="project-links">
+              <a class="small-btn" href="https://github.com/Ratnamanohar-1543/Online-Fee-Management-System" >GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="card project-card">
+          <div>
+            <h3>Eco Campus Management System</h3>
+            <p class="muted">
+              A campus-focused management system aimed at supporting
+              sustainable campus practices, environmental awareness,
+              resource management and eco-friendly initiatives.
+            </p>
+            <div>
+              <span class="tag">Python</span>
+              <span class="tag">Django</span>
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">SQL</span>
+            </div>
+          </div>
+
+          <div class="bottom">
+            <div class="project-links">
+              <a class="small-btn" href="#" >GitHub ↗</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="certifications">
+    <div class="container">
+      <div class="eyebrow">Certifications</div>
+      <h2>Learning backed by certificates.</h2>
+      <p class="section-intro">
+        Click any certification to open the original certificate file. PDF certificates open in the browser's PDF viewer;
+        image certificates open as full-size images.
+      </p>
+
+      <div class="cert-filter">
+        <button class="filter active" data-filter="all">All</button>
+        <button class="filter" data-filter="internship">Internships</button>
+        <button class="filter" data-filter="programming">Programming</button>
+        <button class="filter" data-filter="ai">AI / Cloud</button>
+        <button class="filter" data-filter="nptel">NPTEL</button>
+        <button class="filter" data-filter="other">Other</button>
+      </div>
+
+      <div class="cert-grid" id="certGrid">
+
+        <article class="cert-card" data-category="internship"
+          data-title="AWS Cloud Computing – DevOps"
+          data-provider="APSSDC"
+          data-file="certificates/APSSDC_AWS_Cloud_DevOps.pdf"
+          data-type="pdf">
+          <div class="cert-icon">AWS</div>
+          <h3>AWS Cloud Computing – DevOps</h3>
+          <p>APSSDC • Summer Online Internship 2026</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="internship"
+          data-title="Web Development using Django"
+          data-provider="APSSDC"
+          data-file="certificates/APSSDC_Web_Development_Django.pdf"
+          data-type="pdf">
+          <div class="cert-icon">DJ</div>
+          <h3>Web Development using Django</h3>
+          <p>APSSDC • Summer Online Internship 2025</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="internship"
+          data-title="UI/UX Developers"
+          data-provider="APSSDC"
+          data-file="certificates/APSSDC_UI_UX_Developers.pdf"
+          data-type="pdf">
+          <div class="cert-icon">UX</div>
+          <h3>UI/UX Developers</h3>
+          <p>APSSDC • Certificate of Completion</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="programming"
+          data-title="Python Essentials 1"
+          data-provider="Cisco Networking Academy"
+          data-file="certificates/Cisco_Python_Essentials_1.pdf"
+          data-type="pdf">
+          <div class="cert-icon">Py</div>
+          <h3>Python Essentials 1</h3>
+          <p>Cisco Networking Academy</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="programming"
+          data-title="Python Essentials 2"
+          data-provider="Cisco Networking Academy"
+          data-file="certificates/Cisco_Python_Essentials_2.pdf"
+          data-type="pdf">
+          <div class="cert-icon">Py</div>
+          <h3>Python Essentials 2</h3>
+          <p>Cisco Networking Academy</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="ai"
+          data-title="Generative AI by Google Cloud"
+          data-provider="L4G / Google Skills"
+          data-file="certificates/L4G_Generative_AI_Google_Cloud.pdf"
+          data-type="pdf">
+          <div class="cert-icon">AI</div>
+          <h3>Generative AI by Google Cloud</h3>
+          <p>45-hour course • 22 skill badges</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="ai"
+          data-title="AI Skills Passport"
+          data-provider="EY & Microsoft"
+          data-file="certificates/EY_Microsoft_AI_Skills_Passport.pdf"
+          data-type="pdf">
+          <div class="cert-icon">AI</div>
+          <h3>AI Skills Passport</h3>
+          <p>EY & Microsoft</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="ai"
+          data-title="AI + Sustainability Virtual Internship"
+          data-provider="IBM SkillsBuild / 1M1B"
+          data-file="certificates/IBM_1M1B_AI_Sustainability_Internship.pdf"
+          data-type="pdf">
+          <div class="cert-icon">IBM</div>
+          <h3>AI + Sustainability Virtual Internship</h3>
+          <p>IBM SkillsBuild / 1M1B</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="programming"
+          data-title="Dart Programming"
+          data-provider="Infosys"
+          data-file="certificates/Infosys_Dart_Programming.pdf"
+          data-type="pdf">
+          <div class="cert-icon">D</div>
+          <h3>Dart Programming</h3>
+          <p>Infosys / Springboard</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="programming"
+          data-title="Mobile App Development using Flutter"
+          data-provider="Infosys"
+          data-file="certificates/Infosys_Flutter_Mobile_App_Development.pdf"
+          data-type="pdf">
+          <div class="cert-icon">F</div>
+          <h3>Mobile App Development using Flutter</h3>
+          <p>Infosys / Springboard</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="nptel"
+          data-title="Human Computer Interaction"
+          data-provider="NPTEL"
+          data-file="certificates/NPTEL_Human_Computer_Interaction.pdf"
+          data-type="pdf">
+          <div class="cert-icon">81</div>
+          <h3>Human Computer Interaction</h3>
+          <p>NPTEL • Elite • 81%</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="nptel"
+          data-title="Design & Implementation of Human-Computer Interfaces"
+          data-provider="NPTEL"
+          data-file="certificates/NPTEL_Design_Implementation_HCI.pdf"
+          data-type="pdf">
+          <div class="cert-icon">HCI</div>
+          <h3>Design & Implementation of Human-Computer Interfaces</h3>
+          <p>NPTEL • 55%</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="nptel"
+          data-title="Design Thinking – A Primer"
+          data-provider="NPTEL"
+          data-file="certificates/NPTEL_Design_Thinking_Primer.pdf"
+          data-type="pdf">
+          <div class="cert-icon">DT</div>
+          <h3>Design Thinking – A Primer</h3>
+          <p>NPTEL • 56%</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="other"
+          data-title="Technical Writing"
+          data-provider="Saylor University"
+          data-file="certificates/Saylor_Technical_Writing.pdf"
+          data-type="pdf">
+          <div class="cert-icon">TW</div>
+          <h3>Technical Writing</h3>
+          <p>Saylor University • 86 hours • 100%</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="other"
+          data-title="Exploring the World of IoT and AI with ESP32"
+          data-provider="Andhra Loyola Institute of Engineering and Technology / SRC e-Solutions"
+          data-file="certificates/IoT_AI_ESP32_Workshop.jpeg"
+          data-type="image">
+          <div class="cert-icon">IoT</div>
+          <h3>IoT & AI with ESP32</h3>
+          <p>Three-day workshop • 2025</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="other"
+          data-title="CodeSpark India 2025"
+          data-provider="KBN College"
+          data-file="certificates/CodeSpark_India_2025.jpeg"
+          data-type="image">
+          <div class="cert-icon">CS</div>
+          <h3>CodeSpark India 2025</h3>
+          <p>National-Level Coding & Innovation Hackathon</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+        <article class="cert-card" data-category="other"
+          data-title="30 Days Power BI Micro Course"
+          data-provider="SkillCourse"
+          data-file="certificates/SkillCourse_30_Days_PowerBI.jpeg"
+          data-type="image">
+          <div class="cert-icon">BI</div>
+          <h3>30 Days Power BI Micro Course</h3>
+          <p>SkillCourse • Completion Certificate</p>
+          <div class="open">Open certificate →</div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="education">
+    <div class="container">
+      <div class="eyebrow">Education</div>
+      <h2>Academic background</h2>
+      <div class="grid two">
+        <div class="card education-item">
+          <div class="edu-icon">IT</div>
+          <div>
+            <h3>B.Tech — Information Technology</h3>
+            <p class="muted">Andhra Loyola Institute of Engineering and Technology</p>
+            <p class="muted" style="margin-top:7px">JNTUK • Pursuing</p>
+          </div>
+        </div>
+        <div class="card education-item">
+          <div class="edu-icon">+</div>
+          <div>
+            <h3>Academic Learning</h3>
+            <p class="muted">Programming, web development, cloud computing, AI, HCI and design thinking.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <div class="container">
+      <div class="eyebrow">Contact</div>
+      <h2>Let's connect.</h2>
+      <p class="section-intro">Interested in my work, projects or internship opportunities? Feel free to connect with me.</p>
+      <div class="contact-grid">
+        <a class="contact-item" href="mailto:23hp1a1243@gmail.com">
+          <div>✉️</div><div><strong>Email</strong><span>23hp1a1243@gmail.com</span></div>
+        </a>
+        <a class="contact-item" href="https://www.linkedin.com/in/ratnamanohar" target="_blank" rel="noopener">
+          <div>in</div><div><strong>LinkedIn</strong><span>linkedin.com/in/ratnamanohar</span></div>
+        </a>
+        <a class="contact-item" href="tel:+919XXXXXXXXX">
+          <div>☎</div><div><strong>Phone</strong><span>8919918942</span></div>
+        </a>
+        <a class="contact-item" href="#projects">
+          <div>⌘</div><div><strong>Projects</strong><span>View my development work</span></div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> Naga Venkata Ratna Manohar</div>
+    <div>Built with HTML, CSS & JavaScript.</div>
+  </div>
+</footer>
+
+<!-- Certificate viewer -->
+<div class="modal" id="certModal" aria-hidden="true">
+  <div class="modal-box">
+    <div class="modal-top">
+      <div>
+        <div class="eyebrow" style="margin:0 0 3px">Certificate</div>
+        <h3 id="modalTitle">Certificate</h3>
+        <p class="muted" id="modalProvider"></p>
+      </div>
+      <button class="close" id="closeModal" aria-label="Close">✕</button>
+    </div>
+
+    <div class="modal-content" id="modalContent"></div>
+
+    <div class="modal-actions">
+      <a id="openOriginal" class="btn btn-primary" href="#" target="_blank" rel="noopener">Open original ↗</a>
+      <button class="btn btn-secondary" id="closeBottom">Close</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile menu
+  const menuBtn = document.getElementById("menuBtn");
+  const navLinks = document.getElementById("navLinks");
+  menuBtn.addEventListener("click", () => navLinks.classList.toggle("show"));
+  document.querySelectorAll(".nav-links a").forEach(a => {
+    a.addEventListener("click", () => navLinks.classList.remove("show"));
+  });
+
+  // Footer year
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Certification filtering
+  const filters = document.querySelectorAll(".filter");
+  const certCards = document.querySelectorAll(".cert-card");
+
+  filters.forEach(filter => {
+    filter.addEventListener("click", () => {
+      filters.forEach(f => f.classList.remove("active"));
+      filter.classList.add("active");
+
+      const category = filter.dataset.filter;
+      certCards.forEach(card => {
+        card.classList.toggle(
+          "hidden",
+          category !== "all" && card.dataset.category !== category
+        );
+      });
+    });
+  });
+
+  // Certificate viewer
+  const modal = document.getElementById("certModal");
+  const modalTitle = document.getElementById("modalTitle");
+  const modalProvider = document.getElementById("modalProvider");
+  const modalContent = document.getElementById("modalContent");
+  const openOriginal = document.getElementById("openOriginal");
+
+  function openCertificate(card) {
+    const title = card.dataset.title;
+    const provider = card.dataset.provider;
+    const file = card.dataset.file;
+    const type = card.dataset.type;
+
+    modalTitle.textContent = title;
+    modalProvider.textContent = provider;
+    openOriginal.href = file;
+
+    if (type === "image") {
+      modalContent.innerHTML = `<img src="${file}" alt="${title} certificate">`;
+    } else {
+      modalContent.innerHTML = `
+        <iframe
+          src="${file}#toolbar=1&navpanes=0"
+          title="${title} certificate">
+        </iframe>`;
+    }
+
+    modal.classList.add("open");
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeCertificate() {
+    modal.classList.remove("open");
+    modal.setAttribute("aria-hidden", "true");
+    modalContent.innerHTML = "";
+    document.body.style.overflow = "";
+  }
+
+  certCards.forEach(card => {
+    card.addEventListener("click", () => openCertificate(card));
+  });
+
+  document.getElementById("closeModal").addEventListener("click", closeCertificate);
+  document.getElementById("closeBottom").addEventListener("click", closeCertificate);
+
+  modal.addEventListener("click", e => {
+    if (e.target === modal) closeCertificate();
+  });
+
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape") closeCertificate();
+  });
+</script>
+</body>
+</html>
